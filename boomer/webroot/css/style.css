@@ -1,0 +1,60 @@
+body {
+    background:gray;
+}
+
+
+#ROUND_CORNERS,
+.app-boxart {
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    -khtml-border-radius:10px;
+    border-radius:10px;
+}
+#REFLECTION,
+.app-boxart {
+    -webkit-box-reflect:below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(white)); 
+}
+
+#applications-container {
+    width:800px;
+    height:600px;
+}
+
+.app {
+    width:355px;
+    height:500px;
+    padding:20px;
+    
+    display:inline-block;
+}
+
+.app-boxart {
+    width:355px;
+    height:500px;
+    background-size: 100%;
+    position:relative;
+    z-index:5;
+    
+/*    border:white solid 1px;*/
+    background:black
+}
+
+.app-title {
+    position:relative;
+    z-index:10;
+    margin-top:50px;
+    
+    background-color:rgba(0,0,0,0.5);
+    
+    text-align:center;
+    font-size:40px;
+    font-weight:bold;
+    color:white;
+    
+    
+    text-shadow: 0 2px 1px rgba(0,0,0,1);
+    
+    -webkit-box-shadow: 0 5px 5px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 5px 5px rgba(0,0,0,.5);
+    box-shadow: 0 5px 5px rgba(0,0,0,.5);
+}

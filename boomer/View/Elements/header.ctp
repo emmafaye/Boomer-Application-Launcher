@@ -1,5 +1,6 @@
 <?php
-
-echo 'header';
+    $this->Html->css('style.css', null, array('inline' => false));
+    
+    //echo 'header';
 
 ?>

@@ -2,15 +2,16 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title><?php echo $title_for_layout?></title>
+        <title><?php echo $title_for_layout; ?></title>
+        <?php echo $this->Html->css(array('reset.css', 'style.css')) ?>
+        <?php echo $scripts_for_layout; ?>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <?php echo $scripts_for_layout ?>
     </head>
     <body>
-        <?php echo $this->element('header') ?>
+        <?php echo $this->element('header'); ?>
 
-        <?php echo $content_for_layout ?>
+        <?php echo $content_for_layout; ?>
 
-        <?php echo $this->element('footer') ?>
+        <?php echo $this->element('footer'); ?>
     </body>
 </html>
