@@ -4,6 +4,7 @@
     <head>
         <title><?php echo $title_for_layout; ?></title>
         <?php echo $this->Html->css(array('reset.css', 'style.css')) ?>
+        <?php echo $this->Html->script(array('jquery.js')); ?>
         <?php echo $scripts_for_layout; ?>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     </head>
