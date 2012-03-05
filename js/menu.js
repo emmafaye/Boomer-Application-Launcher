@@ -120,6 +120,7 @@
                     '<div class="app-boxart-container"><div class="app-boxart" style="background:url(' + this.image + ') no-repeat"></div></div>' +
                 '</div>'
             );
+            $('#applications-container').find('[app_id=' + count + '] .app-title').autoTextSize(20, 40, 20, true);
             applications[count] = {'name': this.name};
             count++;
         });
