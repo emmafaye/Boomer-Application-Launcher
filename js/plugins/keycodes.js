@@ -26,7 +26,8 @@ $.charcode = function(input, returnInt) {
 		'f6':'117','f7':'118','f8':'119','f9':'120','f10':'121','f11':'122',
 		'f12':'123','num lock':'144','scroll lock':'145','semi-colon':'186','equal sign':'187','equals sign':'187',
 		'comma':'188','dash':'189','period':'190','forward slash':'191','grave accent':'192','open bracket':'219',
-		'back slash':'220','close braket':'221','single quote':'222'
+		'back slash':'220','close braket':'221','single quote':'222',
+                'left button':'1','middle button':'2','right button':'3'
 	};
 	var ReverseCharcodes = {
 		'8':'backspace','9':'tab','13':'enter','16':'shift','17':'ctrl','18':'alt','32':'space',
@@ -45,7 +46,8 @@ $.charcode = function(input, returnInt) {
 		'115':'f4','116':'f5','117':'f6','118':'f7','119':'f8','120':'f9',
 		'121':'f10','122':'f11','123':'f12','144':'num lock','145':'scroll lock','186':'semi-colon',
 		'187':'equal sign','187':'equals sign','188':'comma','189':'dash','190':'period','191':'forward slash',
-		'192':'grave accent','219':'open bracket','220':'back slash','221':'close braket','222':'single quote'
+		'192':'grave accent','219':'open bracket','220':'back slash','221':'close braket','222':'single quote',
+                '1':'left button','2':'middle button','3':'right button'
 	};
 	if(returnInt === false && (typeof(input) == 'string'))
 		return charcodes[input.toLowerCase()];

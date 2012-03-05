@@ -56,6 +56,12 @@ $(document).ready(function() {
                         'continous'     : false,
                         'func'          : function(){$().menu('input', 'goBack');}
                     }
+                },
+                'mouse' : {
+                    'left button' : {
+                        'continous'     : false,
+                        'func'          : function(){$().menu('input', 'execute');}
+                    }
                 }
             }
         }
@@ -91,6 +97,7 @@ $(document).ready(function() {
         'start'
     ];
     var pressed_buttons = {};
+//    var gamepads_start = {};
     
     var methods = {
         init : function(set_options) {
@@ -98,14 +105,26 @@ $(document).ready(function() {
          
             $('body').on({
                 'keydown' : function(event) {
-                    event.preventDefault();
+                    //event.preventDefault();
                     
                     _self.buttonDown($.charcode(event.which), 'keyboard');
                 },
                 'keyup' : function(event) {
-                    event.preventDefault();
+                    //event.preventDefault();
                     
                     _self.buttonUp($.charcode(event.which), 'keyboard');
+                }
+            });
+            $('#applications-container').on({
+                'mousedown' : function(event) {
+                    console.log('mousedown: ' + $(event.target).closest('[app_id]').attr('app_id'))
+                    $().menu('setSelectedApplication', $(event.target).closest('[app_id]').attr('app_id'));
+                    _self.buttonDown($.charcode(event.which), 'mouse');
+                },
+                'mouseup' : function(event) {
+                    console.log('mouseup: ' + $(event.target).closest('[app_id]').attr('app_id'))
+                    $().menu('setSelectedApplication', $(event.target).closest('[app_id]').attr('app_id'));
+                    _self.buttonUp($.charcode(event.which), 'mouse');
                 }
             });
             
@@ -128,6 +147,9 @@ $(document).ready(function() {
                 // Fallback or encourage user to bug their browser vendor
                 alert('Controller support is not available in your browser.');
             }
+//            gamepads_start = Gamepad.getStates();
+//            console.log(gamepads_start);
+            
             
             _self.update();
             
@@ -146,6 +168,10 @@ $(document).ready(function() {
         for(var i = 0; i < gamepads.length; ++i) {
             var gamepad      = gamepads[i];
             var gamepad_last = gamepads_last[i];
+//            console.log(gamepad != undefined && gamepads_start[i] == undefined);
+//            if(gamepad != undefined && gamepads_start[i] == undefined) {
+//                console.log('Controller Connected: ' + gamepad.name);
+//            }
             if(gamepad && gamepad_last) {
                 for(var b = 0; b < buttons.length; ++b) {
                     if((gamepad[buttons[b]] == gamepad_last[buttons[b]]) && gamepad[buttons[b]] == 1) {
@@ -156,7 +182,8 @@ $(document).ready(function() {
                 }
             }
         }
-
+        
+//        window.setTimeout(_self.update, 20);
         window.requestAnimationFrame(update);
     }
     
