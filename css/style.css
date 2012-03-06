@@ -27,6 +27,17 @@ body {
     -khtml-border-radius:10px;
     border-radius:10px;
 }
+#TOPLEFT_TOPRIGHT_CORNERS,
+.app-title {
+    border-top-left-radius:10px;
+    -moz-border-radius-topleft:10px;
+    -webkit-border-top-left-radius:10px;
+    
+    border-top-right-radius:10px;
+    -moz-border-radius-topright:10px;
+    -webkit-border-top-right-radius:10px;
+}
+
 #REFLECTION,
 .app-boxart {
     -webkit-box-reflect:below 0 -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(rgba(255, 255, 255, 0.2)));
@@ -40,48 +51,47 @@ body {
 }
 
 #applications-types-container {
+    position:absolute;
     height:100%;
     width:300px;
-    position:fixed;
-    z-index:100;
-    left:0;
-    top:0;
     padding-left:20px;
     padding-top:15%;
+    z-index:100;
     
     background:-webkit-gradient(linear, 100% 60%, 60% 60%, from(transparent), to(rgba(0, 0, 0, 0.9)));
 }
 
 #applications-scroll-container {
-    margin-top:150px;
     overflow:hidden;
 }
 #applications-container {
+    position:absolute;
     width:100%;
     height:750px;
-    left:355px;
     float:right;
-    position:absolute;
+    top:20%;
+    left:355px;
     white-space:nowrap;
 }
 
 
 
 .app {
+    display:inline-block;
     width:355px;
     height:500px;
     padding:20px;
     
     cursor:pointer;
-    display:inline-block;
 }
 
 .app-boxart {
+    position:relative;
     width:355px;
     height:500px;
-    background-size:100% 100%;
-    position:relative;
     z-index:5;
+    
+    background-size:100% 100%;
 }
 
 .app-boxart-container {
@@ -97,18 +107,11 @@ body {
 
 .app-title {
     position:relative;
+    margin-bottom:-5px;
+    padding-bottom:25px;
+    padding-top:15px;
 
-    margin-top:50px;
-    
-    background-color:rgba(0,0,0,0.5);
-    
-    border-top-left-radius:10px;
-    -moz-border-radius-topleft:10px;
-    -webkit-border-top-left-radius:10px;
-    
-    border-top-right-radius:10px;
-    -moz-border-radius-topright:10px;
-    -webkit-border-top-right-radius:10px;
+    background-color:rgba(0,0,0,0.8);
     
     text-align:center;
     font-family:Helvetica, Verdana, sans-serif;
@@ -116,15 +119,12 @@ body {
     line-height:40px;
     font-weight:bold;
     color:#666666;
-    padding-bottom:10px;
-    padding-top:10px;
-    margin-bottom:-5px;
     
     text-shadow:1px 1px 1px white, 1px 1px 10px black;
     
-    -webkit-box-shadow:0 5px 5px rgba(0,0,0,.5);
-    -moz-box-shadow:0 5px 5px rgba(0,0,0,.5);
-    box-shadow:0 5px 5px rgba(0,0,0,.5);
+    -webkit-box-shadow:0 10px 10px rgba(0,0,0,.5);
+    -moz-box-shadow:0 10px 10px rgba(0,0,0,.5);
+    box-shadow:0 10px 10px rgba(0,0,0,.5);
 }
 
 .application-type {

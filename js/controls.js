@@ -118,7 +118,7 @@ $(document).ready(function() {
             $('#applications-container').on({
                 'mousedown' : function(event) {
                     console.log('mousedown: ' + $(event.target).closest('[app_id]').attr('app_id'))
-                    $().menu('setSelectedApplication', $(event.target).closest('[app_id]').attr('app_id'));
+                    //$().menu('setSelectedApplication', $(event.target).closest('[app_id]').attr('app_id'));
                     _self.buttonDown($.charcode(event.which), 'mouse');
                 },
                 'mouseup' : function(event) {

@@ -29,6 +29,7 @@
     };
     var applications = {};
     var selected_application = 0;
+    var previous_application = 0;
     
     var methods = {
         init : function(set_options) {
@@ -50,8 +51,13 @@
             }
         },
         setSelectedApplication : function(application) {
-            selected_application = application;
-            selectApplication();
+            setApplication(application);
+            
+//            if((previous_application - application) > 0) {
+//                navigateApplications('right');
+//            } else {
+//                navigateApplications('left');
+//            }
         },
         destroy : function() {
             
@@ -84,6 +90,13 @@
         }
     }
     
+    var setApplication = function(application) {
+        previous_application = selected_application;
+
+        selected_application = application;
+        selectApplication();
+    }
+    
     var navigateApplications = function(direction) {
         apps_container = $('#applications-container');
         apps_container_left = parseInt(apps_container.css('left'));
@@ -91,24 +104,19 @@
         
         if(direction == 'left' && selected_application > 0) {
             apps_container.animate({left:(-(selected_application) * app_boxart_width + app_boxart_width + app_boxart_width) + 'px'}, {queue:false, duration:300});
-            selected_application--;
-            selectApplication();
+            setApplication(selected_application-1);
         } else if(direction == 'right' && selected_application < Object.keys(applications).length - 1) {
-            apps_container.animate({left:((selected_application+1) * -app_boxart_width + app_boxart_width) + 'px'}, {queue:false, duration:300});
-            selected_application++;
-            selectApplication();
+            apps_container.animate({left:((parseInt(selected_application)+1) * -app_boxart_width + app_boxart_width) + 'px'}, {queue:false, duration:300});
+            setApplication(parseInt(selected_application)+1);
         }
     }
     
-//    if((temp_selected_application - application) > 0) {
-//        navigateApplications('right');
-//    } else {
-//        navigateApplications('left');
-//    }
-    
     var selectApplication = function() {
-        $('#applications-container').find('[app_id] .app-boxart-container').removeClass('selected');
+        $('#applications-container').find('[app_id=' + previous_application + '] .app-boxart-container').removeClass('selected');
+        $('#applications-container').find('[app_id=' + previous_application + '] .app-title').slideUp();
+        
         $('#applications-container').find('[app_id=' + selected_application + '] .app-boxart-container').addClass('selected');
+        $('#applications-container').find('[app_id=' + selected_application + '] .app-title').slideDown();
     }
     
     var parseApplications = function() {
@@ -116,11 +124,12 @@
         $.each(applicationsJSON.apps, function() {
             $('#applications-container').append(
                 '<div class="app" app_id="' + count +'">' +
-                    '<div class="app-title">' + this.name + '</div>' +
                     '<div class="app-boxart-container"><div class="app-boxart" style="background:url(' + this.image + ') no-repeat"></div></div>' +
+                    '<div class="app-title">' + this.name + '</div>' +
                 '</div>'
             );
             $('#applications-container').find('[app_id=' + count + '] .app-title').autoTextSize(20, 40, 20, true);
+            $('#applications-container').find('[app_id=' + count + '] .app-title').hide();
             applications[count] = {'name': this.name};
             count++;
         });
