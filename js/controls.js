@@ -25,6 +25,10 @@ $(document).ready(function() {
                     'faceButton1'   : {
                         'continous'     : false,
                         'func'          : function(){$().menu('input', 'goBack');}
+                    },
+                    'faceButton3' : {
+                        'continous'     : false,
+                        'func'          : function(){$().menu('input', 'moreInfo');}
                     }
                 },
                 'keyboard' : {
@@ -47,6 +51,10 @@ $(document).ready(function() {
                     'enter' : {
                         'continous'     : false,
                         'func'          : function(){$().menu('input', 'execute');}
+                    },
+                    'space' : {
+                        'continous'     : false,
+                        'func'          : function(){$().menu('input', 'moreInfo');}
                     },
                     'escape' : {
                         'continous'     : false,
@@ -117,11 +125,15 @@ $(document).ready(function() {
             });
             $('#applications-container').on({
                 'mousedown' : function(event) {
+                    //event.preventDefault();
+                    
                     console.log('mousedown: ' + $(event.target).closest('[app_id]').attr('app_id'))
                     //$().menu('setSelectedApplication', $(event.target).closest('[app_id]').attr('app_id'));
                     _self.buttonDown($.charcode(event.which), 'mouse');
                 },
                 'mouseup' : function(event) {
+                    //event.preventDefault();
+                    
                     console.log('mouseup: ' + $(event.target).closest('[app_id]').attr('app_id'))
                     $().menu('setSelectedApplication', $(event.target).closest('[app_id]').attr('app_id'));
                     _self.buttonUp($.charcode(event.which), 'mouse');

@@ -69,6 +69,15 @@
         console.log('Open App: ' + selected_application);
     }
     
+    this.moreInfo = function() {
+        console.log('moreInfo');
+        
+        var selected_app = findAppById(selected_application);
+        
+        $('#applications-container').find('.app:not([app_id=' + selected_application + '])').fadeOut({queue:false, duration:300});
+        $('#applications-container').animate({top:'10%'}, {queue:false, duration:300});
+    }
+    
     this.goBack = function() {
         console.log('goBack');
     }
@@ -98,9 +107,9 @@
     }
     
     var navigateApplications = function(direction) {
-        apps_container = $('#applications-container');
-        apps_container_left = parseInt(apps_container.css('left'));
-        app_boxart_width = parseInt($('.app-boxart').css('width')) + 40;
+        var apps_container = $('#applications-container');
+        var apps_container_left = parseInt(apps_container.css('left'));
+        var app_boxart_width = parseInt($('.app-boxart').css('width')) + 40;
         
         if(direction == 'left' && selected_application > 0) {
             apps_container.animate({left:(-(selected_application) * app_boxart_width + app_boxart_width + app_boxart_width) + 'px'}, {queue:false, duration:300});
@@ -112,11 +121,14 @@
     }
     
     var selectApplication = function() {
-        $('#applications-container').find('[app_id=' + previous_application + '] .app-boxart-container').removeClass('selected');
-        $('#applications-container').find('[app_id=' + previous_application + '] .app-title').slideUp();
+        var previous_app = findAppById(previous_application);
+        var selected_app = findAppById(selected_application);
         
-        $('#applications-container').find('[app_id=' + selected_application + '] .app-boxart-container').addClass('selected');
-        $('#applications-container').find('[app_id=' + selected_application + '] .app-title').slideDown();
+        previous_app.find('.app-boxart-container').removeClass('selected');
+        previous_app.find('.app-title').slideUp();
+        
+        selected_app.find('.app-boxart-container').addClass('selected');
+        selected_app.find('.app-title').slideDown();
     }
     
     var parseApplications = function() {
@@ -133,6 +145,10 @@
             applications[count] = {'name': this.name};
             count++;
         });
+    }
+    
+    var findAppById = function(app_id) {
+        return $('#applications-container').find('[app_id=' + app_id + ']');
     }
     
     $.fn.menu = function(method) {
