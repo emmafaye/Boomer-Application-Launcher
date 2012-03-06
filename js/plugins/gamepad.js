@@ -125,8 +125,11 @@
         return prevData;
     };
     Gamepad.getStates = function() {
-        var rawPads = getField()
-        var len = rawPads.length;
+        var rawPads = getField();
+        var len = 0;
+        if(rawPads != undefined) {
+            len = rawPads.length;
+        }
         for (var i = 0; i < len; ++i) {
             mapIndividualPad(rawPads, i);
         }
