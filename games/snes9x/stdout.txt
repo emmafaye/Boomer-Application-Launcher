@@ -1,0 +1,8 @@
+Reading config file C:\boomer\games\snes9x/snes9x.conf.
+Saving	config file	C:\boomer\games\snes9x/snes9x.conf
+Sound buffer size: 8192 (2048 samples)
+Found ROM file header (and ignored it).
+Map_LoROMMap
+"MEGAMAN X" [checksum ok] LoROM, 16Mbits, ROM, NTSC, SRAM:0Kbits, ID:____, CRC32:DED53C64
+Sound buffer size: 8192 (2048 samples)
+Saving	config file	C:\boomer\games\snes9x/snes9x.conf

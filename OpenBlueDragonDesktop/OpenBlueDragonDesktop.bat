@@ -1,0 +1,1 @@
+start javaw -javaagent:.\lib\agent\appengine-agent.jar -classpath .;.\lib\* com.bluedragon.desktop.Desktop

@@ -1,0 +1,68 @@
+
+]--- Logging Started ------[
+06/03/12 19:29.24: RunTimeError Directory=[C:\boomer\web\WEB-INF\bluedragon\work\temp\rtelogs], Max=[100]
+06/03/12 19:29.24: BlueDragon WorkingDirectory=[C:\boomer\web\WEB-INF\bluedragon\work]
+06/03/12 19:29.24: BlueDragon TempDirectory=[C:\boomer\web\WEB-INF\bluedragon\work\temp]
+06/03/12 19:29.24: dbPool: Initialised using: OpenBD DBPoolManager $Revision: 1.1 $
+06/03/12 19:29.24: OutgoingMailServer started mainDirectory=C:\boomer\web\WEB-INF\bluedragon\work\cfmail
+06/03/12 19:29.24: CollectionFactory.init(): no <cfcollection> found in configuration
+06/03/12 19:29.24: BlueDragon server is starting up...
+06/03/12 19:29.24: Product Version: 2.0.2
+06/03/12 19:29.24: Build date: 2012-01-01 10:14:17 GMT
+06/03/12 19:29.24: tagChecker loaded: 140 tags
+06/03/12 19:29.24: cfmlFileCache Configuration. Caching=1000 files; trusted cache=false
+06/03/12 19:29.24: cfmlFileCache.loadCustomTagMappings [CF_] >> [/WEB-INF/customtags]
+06/03/12 19:29.24: cfmlFileCache.loadCFMappings: no CF mappings defined.
+06/03/12 19:29.24: -] Java CFX Mapping created [CFX_JavaBlueDragonHello] >> [com.newatlanta.BlueDragonHello]
+06/03/12 19:29.24: -] C++ CFX Mapping created [CFX_NativeBlueDragonHello] >> [/WEB-INF/customtags/BlueDragonHello.dll]
+06/03/12 19:29.24: PluginManager Auto Discovery (openbdplugin-XXXX.jar) ...
+06/03/12 19:29.24: ... found: 0 plugins
+06/03/12 19:29.24: cfEngine: Using default character encoding utf-8
+06/03/12 19:29.24: cfEngine: WebResourcePath C:\boomer\web\WEB-INF\resources
+06/03/12 19:29.24: BlueDragon NativeLibDirectory=[/WEB-INF/bin/]
+06/03/12 19:29.24: queryBatchServer started: C:\boomer\web\WEB-INF\bluedragon\work\cfquerybatch
+06/03/12 19:29.24: CFQUERY Connection pool validation queries: ENABLED
+06/03/12 19:29.24: CFIMAP Caching Engine Initialised.
+06/03/12 19:29.24: -] Loaded cfregistry.dll >> [/WEB-INF/bin/cfregistry.dll]
+06/03/12 19:29.24: cfChart: storage=file; size=1000
+06/03/12 19:29.24: scheduleEngine started; logfile=C:\boomer\web\WEB-INF\bluedragon\work\cfschedule\schedule.log
+06/03/12 19:29.24: ScheduleEngine: Started. Initial Tasks=0
+06/03/12 19:29.42: PlugIn.Load.Installed: org.alanwilliamson.openbd.plugin.spreadsheet.SpreadSheetExtension; SpreadSheet; Version=1.2011.11.4
+06/03/12 19:29.42: PlugIn.Load.Installed: org.alanwilliamson.openbd.plugin.cfsmtp.SmtpExtension; CFSMTP; Version=1.2011.11.4
+06/03/12 19:29.42: [LoginPlugin] <server>.<plugin>.<login>.<userfield>: no userfield specified
+06/03/12 19:29.42: PlugIn.Load.Installed: org.aw20.plugin.login.LoginExtension; LoginExtension; Version=1.2011.11.4
+06/03/12 19:29.42: PlugIn.Load.Installed: org.alanwilliamson.openbd.plugin.crontab.CronExtension; CronTab; Version=1.2011.11.4
+06/03/12 19:29.42: PlugIn.Load.Installed: com.bluedragon.mongo.MongoExtension; MongoExtension; Version=1.2011.11.4
+06/03/12 19:29.42: Global client variable updates disabled
+06/03/12 19:29.42: cfApplicationManager.DefaultClientStorage=[cookie]; J2EE Sessions=false
+06/03/12 19:29.42: cfCacheContent: InMemoryCache=50
+06/03/12 19:29.42: cfSCRIPT Registered: language=java; class=org.alanwilliamson.lang.java.cfSCRIPTJava
+06/03/12 19:29.42: cfSCRIPT Registered: language=javascript; class=org.alanwilliamson.lang.javascript.cfSCRIPTJavascript
+06/03/12 19:29.42: expressionEngine loaded: 657 functions
+06/03/12 19:29.42: cfEngine: Show Debug output on error? true
+06/03/12 19:29.42: cfEngine: Show Debugger output? false
+06/03/12 19:29.42: cfEngine: Strict Mode: ArrayPassByReference? false
+06/03/12 19:29.42: cfEngine: Strict Mode: FunctionScopedVariables? false
+06/03/12 19:29.42: cfEngine: Assertions disabled
+06/03/12 19:29.42: cfEngine: Combined Form/Url Scope? false
+06/03/12 19:29.42: cfEngine: Legacy server side form validation? false
+06/03/12 19:29.42: Auto-configure of ODBC datasources is disabled
+06/03/12 19:29.42: BlueDragon has initialised. Ready for requests.
+06/03/12 19:29.42: Server.cfc not available: /Server
+06/03/12 19:29.44: cfApplicationManager.createApp: openbdmanual
+06/03/12 19:29.50: cfApplicationManager.createApp: boomer
+06/03/12 19:33.37: BlueDragon is being shut down ... 
+06/03/12 19:33.37: OutgoingMailServer: Shutdown
+06/03/12 19:33.37: -] mailSender: thread stop.
+06/03/12 19:33.37: -] cfmlFileCache was flushed
+06/03/12 19:33.37: cfmlFileCache was shutdown
+06/03/12 19:33.37: -] cfQueryBatchServer: thread stop.
+06/03/12 19:33.37: -] cfQueryBatchServer: Shutdown
+06/03/12 19:33.37: CFIMAP Caching Engine closed open connections
+06/03/12 19:33.37: cfApplicationManager.onApplicationEnd: openbdmanual
+06/03/12 19:33.37: cfApplicationManager.onApplicationEnd: boomer
+06/03/12 19:33.37: cfApplicationManager has been shutdown
+06/03/12 19:33.37: OutgoingMailServer: Shutdown
+06/03/12 19:33.37: All logging has been shutdown
+06/03/12 19:33.37: dbPool: All database connections have been closed.
+06/03/12 19:33.37: BlueDragon has been successfully shutdown

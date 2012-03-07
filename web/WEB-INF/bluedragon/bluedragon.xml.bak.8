@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server>
+  <system>
+    <buffersize>0</buffersize>
+    <strictarraypassbyreference>false</strictarraypassbyreference>
+    <password>admin</password>
+    <licensekey></licensekey>
+    <assert>false</assert>
+    <missingtemplatehandler></missingtemplatehandler>
+    <tempdirectory>/WEB-INF/bluedragon/work/temp</tempdirectory>
+    <lastfile>C:\boomer\jetty-openbd\webapps\openbd\WEB-INF\bluedragon\bluedragon.xml.bak.1</lastfile>
+    <deniedips></deniedips>
+    <defaultcharset>utf-8</defaultcharset>
+    <component-cfc>/WEB-INF/bluedragon/component.cfc</component-cfc>
+    <scriptsrc>/bluedragon/scripts</scriptsrc>
+    <formurlcombined>false</formurlcombined>
+    <resourcepath>/WEB-INF/resources</resourcepath>
+    <servercfc>/Server.cfc</servercfc>
+    <legacyformvalidation>false</legacyformvalidation>
+    <scriptprotect>false</scriptprotect>
+    <nativelibdir>/WEB-INF/bin</nativelibdir>
+    <errorhandler></errorhandler>
+    <functionscopedvariables>false</functionscopedvariables>
+    <lastupdated>04/Mar/2012 09:59.49</lastupdated>
+    <whitespacecomp>false</whitespacecomp>
+    <allowedips></allowedips>
+  </system>
+  <file>
+    <maxfiles>1000</maxfiles>
+    <trustcache>false</trustcache>
+  </file>
+  <javacustomtags>
+    <classes>/WEB-INF/classes</classes>
+    <mapping name="cfx_javabluedragonhello">
+      <name>cfx_javabluedragonhello</name>
+      <displayname>CFX_JavaBlueDragonHello</displayname>
+      <description>A simple Java CFX tag example</description>
+      <class>com.newatlanta.BlueDragonHello</class>
+    </mapping>
+  </javacustomtags>
+  <nativecustomtags>
+    <mapping name="cfx_nativebluedragonhello">
+      <function>ProcessTagRequest</function>
+      <keeploaded>true</keeploaded>
+      <name>cfx_nativebluedragonhello</name>
+      <module>/WEB-INF/customtags/BlueDragonHello.dll</module>
+      <displayname>CFX_NativeBlueDragonHello</displayname>
+      <description>A simple C++ CFX tag example</description>
+    </mapping>
+  </nativecustomtags>
+  <cfchart>
+    <cachesize>1000</cachesize>
+    <storage>file</storage>
+  </cfchart>
+  <fonts>
+    <dirs>C:\Windows\Fonts</dirs>
+  </fonts>
+  <cfquery>
+    <cache>true</cache>
+  </cfquery>
+  <cfapplication>
+    <j2eesession>false</j2eesession>
+    <applicationtimeout>#CreateTimeSpan(2,0,0,0)#</applicationtimeout>
+    <clientpurgeenabled>true</clientpurgeenabled>
+    <sessiontimeout>#CreateTimeSpan(0,0,20,0)#</sessiontimeout>
+    <cf5clientdata>false</cf5clientdata>
+    <clientexpiry>90</clientexpiry>
+    <enabled>true</enabled>
+    <clientstorage>cookie</clientstorage>
+    <clientGlobalUpdatesDisabled>true</clientGlobalUpdatesDisabled>
+  </cfapplication>
+  <openbdadminapi>
+    <version>2.0</version>
+    <lastupdated>04/Mar/2012 09:59:49</lastupdated>
+  </openbdadminapi>
+  <cfmail>
+    <usetls>false</usetls>
+    <interval>240</interval>
+    <charset>UTF-8</charset>
+    <domain></domain>
+    <smtpport>25</smtpport>
+    <smtpserver>127.0.0.1</smtpserver>
+    <timeout>60</timeout>
+    <usessl>false</usessl>
+    <threads>1</threads>
+    <catchemail></catchemail>
+  </cfmail>
+  <cfmlcustomtags>
+    <mapping name="cf">
+      <directory>/WEB-INF/customtags</directory>
+      <name>cf</name>
+    </mapping>
+  </cfmlcustomtags>
+</server>
