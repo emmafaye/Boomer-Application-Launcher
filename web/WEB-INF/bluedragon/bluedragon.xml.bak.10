@@ -21,7 +21,7 @@
     <nativelibdir>/WEB-INF/bin</nativelibdir>
     <errorhandler></errorhandler>
     <functionscopedvariables>false</functionscopedvariables>
-    <lastupdated>04/Mar/2012 09:59.26</lastupdated>
+    <lastupdated>04/Mar/2012 09:59.49</lastupdated>
     <whitespacecomp>false</whitespacecomp>
     <allowedips></allowedips>
   </system>
@@ -48,16 +48,16 @@
       <description>A simple C++ CFX tag example</description>
     </mapping>
   </nativecustomtags>
+  <cfchart>
+    <cachesize>1000</cachesize>
+    <storage>file</storage>
+  </cfchart>
   <fonts>
     <dirs>C:\Windows\Fonts</dirs>
   </fonts>
   <cfquery>
     <cache>true</cache>
   </cfquery>
-  <openbdadminapi>
-    <version>2.0</version>
-    <lastupdated>04/Mar/2012 09:59:26</lastupdated>
-  </openbdadminapi>
   <cfapplication>
     <j2eesession>false</j2eesession>
     <applicationtimeout>#CreateTimeSpan(2,0,0,0)#</applicationtimeout>
@@ -69,11 +69,21 @@
     <clientstorage>cookie</clientstorage>
     <clientGlobalUpdatesDisabled>true</clientGlobalUpdatesDisabled>
   </cfapplication>
+  <openbdadminapi>
+    <version>2.0</version>
+    <lastupdated>04/Mar/2012 09:59:49</lastupdated>
+  </openbdadminapi>
   <cfmail>
+    <usetls>false</usetls>
     <interval>240</interval>
-    <smtpserver>127.0.0.1</smtpserver>
     <charset>UTF-8</charset>
+    <domain></domain>
     <smtpport>25</smtpport>
+    <smtpserver>127.0.0.1</smtpserver>
+    <timeout>60</timeout>
+    <usessl>false</usessl>
+    <threads>1</threads>
+    <catchemail></catchemail>
   </cfmail>
   <cfmlcustomtags>
     <mapping name="cf">

@@ -6,28 +6,28 @@
     
     var applicationsJSON = {
         "apps": [
-            {"name": "Bastion", "image": "img/boxart/bastion.jpg", "location": ""},
-            {"name": "CaveStory+", "image": "img/boxart/cavestory+.jpg", "location": ""},
-            {"name": "Dead Island", "image": "img/boxart/deadisland.jpg", "location": ""},
-            {"name": "Diablo 3", "image": "img/boxart/diablo3.jpg", "location": ""},
-            {"name": "Dustforce", "image": "img/boxart/dustforce.jpg", "location": ""},
-            {"name": "From Dust", "image": "img/boxart/fromdust.jpg", "location": ""},
-            {"name": "Left 4 Dead 2", "image": "img/boxart/left4dead2.jpg", "location": ""},
-            {"name": "Limbo", "image": "img/boxart/limbo.jpg", "location": ""},
-            {"name": "Rochard", "image": "img/boxart/rochard.jpg", "location": ""},
-            {"name": "Shank", "image": "img/boxart/shank.jpg", "location": ""},
-            {"name": "Shank 2", "image": "img/boxart/shank2.jpg", "location": ""},
-            {"name": "Skyrim", "image": "img/boxart/skyrim.jpg", "location": ""},
-            {"name": "Starcraft 2", "image": "img/boxart/starcraft2.jpg", "location": ""},
-            {"name": "Stealth Bastard", "image": "img/boxart/stealthbastard.jpg", "location": ""},
-            {"name": "Super Meat Boy", "image": "img/boxart/supermeatboy.jpg", "location": ""},
-            {"name": "Team Fortress 2", "image": "img/boxart/teamfortress2.jpg", "location": ""},
-            {"name": "Terraria", "image": "img/boxart/terraria.jpg", "location": ""},
-            {"name": "Trine", "image": "img/boxart/trine.jpg", "location": ""},
-            {"name": "Unreal Tournament 3", "image": "img/boxart/ut3.jpg", "location": ""}
+            {"id": 0, "name": "Bastion", "image": "img/boxart/bastion.jpg", "location": ""},
+            {"id": 1, "name": "CaveStory+", "image": "img/boxart/cavestory+.jpg", "location": ""},
+            {"id": 2, "name": "Dead Island", "image": "img/boxart/deadisland.jpg", "location": ""},
+            {"id": 3, "name": "Diablo 3", "image": "img/boxart/diablo3.jpg", "location": ""},
+            {"id": 4, "name": "Dustforce", "image": "img/boxart/dustforce.jpg", "location": ""},
+            {"id": 5, "name": "From Dust", "image": "img/boxart/fromdust.jpg", "location": ""},
+            {"id": 6, "name": "Left 4 Dead 2", "image": "img/boxart/left4dead2.jpg", "location": ""},
+            {"id": 7, "name": "Limbo", "image": "img/boxart/limbo.jpg", "location": ""},
+            {"id": 8, "name": "Rochard", "image": "img/boxart/rochard.jpg", "location": ""},
+            {"id": 9, "name": "Shank", "image": "img/boxart/shank.jpg", "location": ""},
+            {"id": 10, "name": "Shank 2", "image": "img/boxart/shank2.jpg", "location": ""},
+            {"id": 11, "name": "Skyrim", "image": "img/boxart/skyrim.jpg", "location": ""},
+            {"id": 12, "name": "Starcraft 2", "image": "img/boxart/starcraft2.jpg", "location": ""},
+            {"id": 13, "name": "Stealth Bastard", "image": "img/boxart/stealthbastard.jpg", "location": ""},
+            {"id": 14, "name": "Super Meat Boy", "image": "img/boxart/supermeatboy.jpg", "location": ""},
+            {"id": 15, "name": "Team Fortress 2", "image": "img/boxart/teamfortress2.jpg", "location": ""},
+            {"id": 16, "name": "Terraria", "image": "img/boxart/terraria.jpg", "location": ""},
+            {"id": 17, "name": "Trine", "image": "img/boxart/trine.jpg", "location": ""},
+            {"id": 18, "name": "Unreal Tournament 3", "image": "img/boxart/ut3.jpg", "location": ""}
         ]
     };
-    var applications = {};
+    var applications = applicationsJSON;
     var selected_application = 0;
     var previous_application = 0;
     var app_boxart_padding   = 40;
@@ -68,8 +68,15 @@
         }
     };
     
-    this.execute = function() {
+    this.execute = function(location) {
         console.log('Open App: ' + selected_application);
+
+        $.ajax({
+            url: "launcher.cfm?location=" + applications.apps[selected_application].location,
+            success: function(){
+                console.log('App loaded.');
+            }
+        });
     }
     
     this.moreInfo = function() {
@@ -119,7 +126,7 @@
         if(direction == 'left' && selected_application > 0) {
             apps_container.animate({left:(-(selected_application) * app_boxart_width + app_boxart_width + app_boxart_width) + 'px'}, {queue:false, duration:300});
             setApplication(selected_application-1);
-        } else if(direction == 'right' && selected_application < Object.keys(applications).length - 1) {
+        } else if(direction == 'right' && selected_application < Object.keys(applications.apps).length - 1) {
             apps_container.animate({left:((parseInt(selected_application)+1) * -app_boxart_width + app_boxart_width) + 'px'}, {queue:false, duration:300});
             setApplication(parseInt(selected_application)+1);
         }
@@ -137,18 +144,15 @@
     }
     
     var parseApplications = function() {
-        var count = 0;
-        $.each(applicationsJSON.apps, function() {
+        $.each(applications.apps, function() {
             $('#applications-container').append(
-                '<div class="app" app_id="' + count +'">' +
+                '<div class="app" app_id="' + this.id +'">' +
                     '<div class="app-boxart-container"><div class="app-boxart" style="background:url(' + this.image + ') no-repeat"></div></div>' +
                     '<div class="app-title">' + this.name + '</div>' +
                 '</div>'
             );
-            $('#applications-container').find('[app_id=' + count + '] .app-title').autoTextSize(20, 40, 20, true);
-            $('#applications-container').find('[app_id=' + count + '] .app-title').hide();
-            applications[count] = {'name': this.name};
-            count++;
+            $('#applications-container').find('[app_id=' + this.id + '] .app-title').autoTextSize(20, 40, 20, true);
+            $('#applications-container').find('[app_id=' + this.id + '] .app-title').hide();
         });
     }
     
