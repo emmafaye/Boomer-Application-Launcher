@@ -1,15 +1,32 @@
-<cfset location = url['location'] />
-<cfset s = [url['location']]>
+<cfscript>
+  // a = application
+  // p = parameters
 
-<!-- http://localhost/boomer/launcher.cfm?location=M:\\WORK-DMI\\Web\\wamp\\www\\boomer\\games\\snes9x\\snes9x-x64.exe -->
+  // Application is a reserved word
+  app = "C:\\boomer-git\\games\\snes9x\\snes9x-x64.exe";
+  parameters  = [];
+  if(isDefined("url.p")) {
+    parameters = ListToArray(url.p);
+  }
+</cfscript>
+
+<!-- http://localhost/boomer/launcher.cfm?p=C:\boomer-git\games\snes9x\Roms\Mega%20Man%20X.smc -->
 <cfscript language="java">
-    cfArray d = cf.getArray("s");
-    cf.print(d.get(0));
+  String application = cf.getString("app");
+  cfArray parameters = cf.getArray("parameters");
 
-    try {
-        ProcessBuilder pb = new ProcessBuilder("test", "C:\\boomer\\games\\snes9x\\Roms\\Mega Man X.smc");
-        Process p = pb.start();
-    } catch(Exception e) {
-        cf.print(e.getMessage());
+  cf.print(application);
+  if(parameters.size() > 0) {
+    cf.print(parameters.get(0));
+  }
+
+  try {
+    ProcessBuilder pb = new ProcessBuilder(application);
+    if(parameters.size() > 0) {
+      pb = new ProcessBuilder(application, (String)parameters.get(0));
     }
+    Process p = pb.start();
+  } catch(Exception e) {
+    cf.print(e.getMessage());
+  }
 </cfscript>
