@@ -69,6 +69,10 @@ $(document).ready(function() {
                     'left button' : {
                         'continous'     : false,
                         'func'          : function(){$().menu('input', 'execute');}
+                    },
+                    'right button' : {
+                        'continous'     : false,
+                        'func'          : function(){$().menu('input', 'edit');}
                     }
                 }
             }
@@ -125,14 +129,14 @@ $(document).ready(function() {
             });
             $('#applications-container').on({
                 'mousedown' : function(event) {
-                    //event.preventDefault();
+                    event.preventDefault();
                     
                     console.log('mousedown: ' + $(event.target).closest('[app_id]').attr('app_id'))
                     //$().menu('setSelectedApplication', $(event.target).closest('[app_id]').attr('app_id'));
                     _self.buttonDown($.charcode(event.which), 'mouse');
                 },
                 'mouseup' : function(event) {
-                    //event.preventDefault();
+                    event.preventDefault();
                     
                     console.log('mouseup: ' + $(event.target).closest('[app_id]').attr('app_id'))
                     $().menu('setSelectedApplication', $(event.target).closest('[app_id]').attr('app_id'));

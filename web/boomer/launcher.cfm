@@ -1,18 +1,18 @@
 <cfscript>
-  // a = application
-  // p = parameters
-
-  // Application is a reserved word
-  app = "C:\\boomer-git\\games\\snes9x\\snes9x-x64.exe";
-  parameters  = [];
-  if(isDefined("url.p")) {
-    parameters = ListToArray(url.p);
+  location   = "";
+  parameters = [];
+  
+  if(isDefined("url.location")) {
+    location = url.location;
+  }
+  if(isDefined("url.parameters")) {
+    parameters = ListToArray(url.parameters);
   }
 </cfscript>
 
-<!-- http://localhost/boomer/launcher.cfm?p=C:\boomer-git\games\snes9x\Roms\Mega%20Man%20X.smc -->
+<!-- http://localhost/boomer/launcher.cfm?location=C:\boomer-git\games\snes9x\snes9x.exe&parameters=C:\boomer-git\games\snes9x\Roms\Mega%20Man%20X.smc -->
 <cfscript language="java">
-  String application = cf.getString("app");
+  String application = cf.getString("location");
   cfArray parameters = cf.getArray("parameters");
 
   cf.print(application);
