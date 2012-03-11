@@ -39,7 +39,7 @@
     if(IsInstanceof(mongoObjectId, "org.bson.types.ObjectId")) {
       app = MongoCollectionfindone("mongo", "applications", {"_id":mongoObjectId});
 
-      if(isDefined("app.command")) {
+      if(IsNull(app) == false) {
         command      = app.command;
         appCanLaunch = true;
       }

@@ -7,9 +7,11 @@
 
 <!-- This is how you loop through each application and execute it -->
 <cfloop index="i" from="1" to="#appcount#">
-  <p>
-    <cfoutput>
-      <a href="/boomer/launcher.cfm?o=#applist[i]._id.toString()#">#applist[i].title#</a>
-    </cfoutput>
-  </p>
+  <cfoutput><p>
+    <span>#applist[i].title#</span>
+    <a href="/boomer/launcher.cfm?o=#applist[i]._id.toString()#">Launch</a>
+    <a href="/boomer/editapp.cfm?o=#applist[i]._id.toString()#">Edit</a>
+  </p></cfoutput>
 </cfloop>
+
+<p><a href="/boomer/addapp.cfm">Add Application</a></p>
