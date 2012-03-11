@@ -1,3 +1,9 @@
+html, html a {
+    -webkit-font-smoothing: antialiased !important;
+    font-smooth:always !important;
+/*    -webkit-text-stroke:1px white;*/
+/*    text-shadow:#000 0 1px 1px,#000 0 -1px 1px*/
+}
 html { width:100%; height:100%; }
 body {
     width:100%;
@@ -7,6 +13,17 @@ body {
     background:#333333;
     background:-moz-linear-gradient(top, #333333, #000000);
     background:-webkit-gradient(linear, left top, left bottom, from(#333333), to(#000000));
+}
+
+@font-face {
+    font-family:'AmaranthBold';
+    src:url('fonts/amaranth-bold-webfont.eot');
+    src:url('fonts/amaranth-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/amaranth-bold-webfont.woff') format('woff'),
+         url('fonts/amaranth-bold-webfont.ttf') format('truetype'),
+         url('fonts/amaranth-bold-webfont.svg#AmaranthBold') format('svg');
+    font-weight:normal;
+    font-style:normal;
 }
 
 #HIDE_SELECTION,
@@ -19,7 +36,21 @@ body {
     background-color:transparent !important;
 }
 
+#HELEVTICA_FONT_FAMILY,
+#applications-info,
+.app-title,
+.application-type {
+    font-family:'Helvetica', Verdana, sans-serif;
+}
+
+#AMARANTH_FONT_FAMILY,
+#applications-description {
+    font-family:'AmaranthBold', Helvetica, Verdana, sans-serif;
+}
+
 #ROUND_CORNERS,
+#menu,
+#applications-info,
 .app-boxart,
 .app-boxart-container {
     -moz-border-radius:10px;
@@ -36,6 +67,13 @@ body {
     border-top-right-radius:10px;
     -moz-border-radius-topright:10px;
     -webkit-border-top-right-radius:10px;
+}
+#BOX_SHADOW,
+#menu,
+.app-boxart-container {
+    -webkit-box-shadow:0 5px 50px rgba(0,0,0,.8);
+    -moz-box-shadow:0 5px 50px rgba(0,0,0,.8);
+    box-shadow:0 5px 50px rgba(0,0,0,.8);
 }
 
 #REFLECTION,
@@ -73,6 +111,51 @@ body {
     left:355px;
     white-space:nowrap;
 }
+#applications-info {
+    position:absolute;
+    top:2%;
+    right:23%;
+    display:none;
+    width:1000px;
+    height:600px;
+    white-space:normal;
+    padding:20px;
+    
+    color:white;
+    font-size:30px;
+    background:rgba(0,0,0,.3);
+    
+    text-shadow:1px 1px 10px black;
+    
+    -webkit-box-shadow:0 5px 50px rgba(0,0,0,.4);
+    -moz-box-shadow:0 5px 50px rgba(0,0,0,.4);
+    box-shadow:0 5px 50px rgba(0,0,0,.4);
+}
+#applications-screenshots {
+    width:950px;
+    height:350px;
+    margin:0 auto;
+    margin-top:30px;
+    margin-bottom:30px;
+    background:rgba(0,0,0,.3);
+}
+#applications-description {
+    -webkit-text-stroke:0px black;
+    text-shadow:white 0px .2px 1px, white 0px -.2px .2px;
+}
+#applications-genre {
+    position:absolute;
+    top:88%;
+    right:45%;
+    display:none;
+    width:600px;
+    height:600px;
+    white-space:normal;
+    padding:20px;
+    
+    color:white;
+    font-size:30px;
+}
 
 
 
@@ -102,10 +185,6 @@ body {
     
     background-color:black;
     border:1px solid black;
-    
-    -webkit-box-shadow:0 5px 50px rgba(0,0,0,.8);
-    -moz-box-shadow:0 5px 50px rgba(0,0,0,.8);
-    box-shadow:0 5px 50px rgba(0,0,0,.8);
 }
 
 .app-title {
@@ -118,7 +197,6 @@ body {
     background-color:rgba(0,0,0,0.8);
     
     text-align:center;
-    font-family:Helvetica, Verdana, sans-serif;
     font-size:40px;
     line-height:40px;
     font-weight:bold;
@@ -132,7 +210,6 @@ body {
 }
 
 .application-type {
-    font-family:Helvetica, Verdana, sans-serif;
     font-size:40px;
     line-height:40px;
     font-weight:bold;
@@ -144,4 +221,23 @@ body {
 }
 .application-type:hover {
     color:#ccc;
+}
+
+#menu {
+    display:none;
+    position:fixed;
+    height:300px;
+    z-index:500;
+    padding:20px;
+    
+    background:#333333;
+}
+.menu-action {
+    font-weight:bold;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
+}
+.menu-action:hover {
+    color:#000000;
 }
