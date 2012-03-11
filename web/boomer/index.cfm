@@ -5,6 +5,9 @@
         <title>Launcher</title>
         <link rel="stylesheet" type="text/css" href="css/reset.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script type="text/javascript">
+            console.log = function() {};
+        </script>
         <script type="text/javascript" src="js/plugins/jquery.js"></script>
         <script type="text/javascript" src="js/plugins/mouse.js"></script>
         <script type="text/javascript" src="js/plugins/keycodes.js"></script>

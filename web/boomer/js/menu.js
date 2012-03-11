@@ -71,13 +71,18 @@
     
     this.execute = function() {
         console.log('Open App: ' + selected_application);
-
-        $.ajax({
-            url: 'launcher.cfm?location=' + applications.apps[selected_application].location + '&parameters=' + applications.apps[selected_application].parameters,
-            success: function(){
-                console.log('App loaded.');
-            }
-        });
+        var location   = applications.apps[selected_application].location;
+        var parameters = applications.apps[selected_application].parameters;
+        
+        if(parameters == undefined) { parameters = ''; }
+        if(location != undefined) {
+            $.ajax({
+                url: 'launcher.cfm?location=' + location + '&parameters=' + parameters,
+                success: function(){
+                    console.log('App loaded.');
+                }
+            });
+        }
     }
     
     this.edit = function() {
@@ -176,14 +181,14 @@
                 }
             });
             $('.menu-action').on('click', function() {
-               switch($(this).attr('id')) {
-                   case 'change-location':
-                       applications.apps[selected_application].location = $('#new-location').val();
-                       
-                       break;
-                   case 'edit-parameters':
-                       break;
-               }
+                switch($(this).attr('id')) {
+                    case 'change-location':
+                        applications.apps[selected_application].location = $('#new-location').val();
+                        
+                        break;
+                    case 'edit-parameters':
+                        break;
+                }
             });
     }
     

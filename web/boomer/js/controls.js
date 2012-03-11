@@ -108,6 +108,9 @@ $(document).ready(function() {
         'select',
         'start'
     ];
+    var disabled_buttons = [
+        'f11'
+    ]
     var pressed_buttons = {};
 //    var gamepads_start = {};
     
@@ -117,14 +120,20 @@ $(document).ready(function() {
          
             $('body').on({
                 'keydown' : function(event) {
-                    //event.preventDefault();
+                    var button = $.charcode(event.which);
+                    if($.inArray(button, disabled_buttons)) {
+                        event.preventDefault();
+                    }
                     
-                    _self.buttonDown($.charcode(event.which), 'keyboard');
+                    _self.buttonDown(button, 'keyboard');
                 },
                 'keyup' : function(event) {
-                    //event.preventDefault();
+                    var button = $.charcode(event.which);
+                    if($.inArray(button, disabled_buttons)) {
+                        event.preventDefault();
+                    }
                     
-                    _self.buttonUp($.charcode(event.which), 'keyboard');
+                    _self.buttonUp(button, 'keyboard');
                 }
             });
             $('#applications-container').on({
@@ -132,7 +141,6 @@ $(document).ready(function() {
                     event.preventDefault();
                     
                     console.log('mousedown: ' + $(event.target).closest('[app_id]').attr('app_id'))
-                    //$().menu('setSelectedApplication', $(event.target).closest('[app_id]').attr('app_id'));
                     _self.buttonDown($.charcode(event.which), 'mouse');
                 },
                 'mouseup' : function(event) {
