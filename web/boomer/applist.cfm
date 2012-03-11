@@ -7,5 +7,9 @@
 
 <!-- This is how you loop through each application and execute it -->
 <cfloop index="i" from="1" to="#appcount#">
-  <cfoutput><a href="/boomer/launcher.cfm?o=#applist[i]._id.toString()#">#applist[i].title#</a></cfoutput>
+  <p>
+    <cfoutput>
+      <a href="/boomer/launcher.cfm?o=#applist[i]._id.toString()#">#applist[i].title#</a>
+    </cfoutput>
+  </p>
 </cfloop>
