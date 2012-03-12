@@ -1,5 +1,0 @@
-;If WinExists("Launcher - Google Chrome","") Then ProcessClose("chrome.exe")
-Run("C:\Users\" & @UserName & "\AppData\Local\Google\Chrome\Application\chrome.exe http://localhost/boomer/")
-If Not WinActive("Launcher - Google Chrome","") Then WinActivate("Launcher - Google Chrome","")
-WinWaitActive("Launcher - Google Chrome","")
-Send("{F11}")

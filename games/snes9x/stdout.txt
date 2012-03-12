@@ -1,4 +1,0 @@
-Reading config file M:\WORK-DMI\Web\wamp\www\boomer\games\snes9x/snes9x.conf.
-Saving	config file	M:\WORK-DMI\Web\wamp\www\boomer\games\snes9x/snes9x.conf
-Sound buffer size: 8192 (2048 samples)
-Saving	config file	M:\WORK-DMI\Web\wamp\www\boomer\games\snes9x/snes9x.conf

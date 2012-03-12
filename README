@@ -12,6 +12,7 @@ Matt came across OpenBlueDragon (OpenBD). This is a Java CFML engine found at ht
 
 Set-up:
 Created a folder C:/boomer to contain all our application's needs.
+Download and install Java Runtime Environment (JRE): http://java.com/en/download/index.jsp or http://java.com/en/download/manual.jsp
 Extracting the Ready2Run Jetty+OpenBD to C:/boomer creates the folder /jetty-openbd
 You are then able to run jetty by executing $ java -jar /jetty-openbd/start.jar
 You are now able to access our webserver at http://127.0.0.1:8080 without any additional set up.
