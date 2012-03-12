@@ -36,10 +36,6 @@
                 <input id="menu-app-genre" type="text" />
             </div>
             <div class="menu-item">
-                <div class="menu-item-title">Description</div>
-                <textarea id="menu-app-description"></textarea>
-            </div>
-            <div class="menu-item">
                 <div class="menu-item-title">Screenshot 1</div>
                 <input id="menu-app-screenshot-1" type="text" />
             </div>
@@ -50,6 +46,10 @@
             <div class="menu-item">
                 <div class="menu-item-title">Screenshot 3</div>
                 <input id="menu-app-screenshot-3" type="text" />
+            </div>
+            <div class="menu-item">
+                <div class="menu-item-title">Description</div>
+                <textarea id="menu-app-description"></textarea>
             </div>
                 
             <span id="menu-set-app" class="menu-button">Set Application</span>

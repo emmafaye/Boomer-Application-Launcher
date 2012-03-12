@@ -55,6 +55,7 @@ saaj.jar
 serializer.jar
 shiro-core-1.1.0.jar
 sqljdbc4.jar
+tools.jar
 webservices.jar
 ws-commons-util-1.0.2.jar
 wsdl4j.jar

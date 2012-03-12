@@ -88,7 +88,7 @@
     this.edit = function() {
         var mouseX = $().mouse('getMouseX');
         var mouseY = $().mouse('getMouseY');
-        $('#menu').css({'top': mouseY + 'px', 'left': mouseX + 'px'}).fadeIn('slow');
+        $('#menu').css({'top': mouseY + 'px', 'left': mouseX + 'px', 'bottom': 'auto', 'right': 'auto'}).fadeIn('slow');
     }
     
     this.moreInfo = function() {

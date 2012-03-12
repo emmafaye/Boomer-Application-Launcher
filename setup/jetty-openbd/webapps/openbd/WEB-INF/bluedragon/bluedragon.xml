@@ -9,14 +9,14 @@
     <whitespacecomp>false</whitespacecomp>
     <nativelibdir>/WEB-INF/bin</nativelibdir>
     <missingtemplatehandler></missingtemplatehandler>
-    <lastfile>M:\WORK-DMI\Web\wamp\www\boomer_production\setup\jetty-openbd\webapps\openbd\WEB-INF\bluedragon\bluedragon.xml.bak.1</lastfile>
+    <lastfile>M:\WORK-DMI\Web\wamp\www\boomer\setup\jetty-openbd\webapps\openbd\WEB-INF\bluedragon\bluedragon.xml.bak.1</lastfile>
     <errorhandler></errorhandler>
     <password>admin</password>
     <tempdirectory>/WEB-INF/bluedragon/work/temp</tempdirectory>
     <buffersize>0</buffersize>
     <deniedips></deniedips>
     <allowedips></allowedips>
-    <lastupdated>11/Mar/2012 20:42.23</lastupdated>
+    <lastupdated>12/Mar/2012 05:19.21</lastupdated>
     <defaultcharset>utf-8</defaultcharset>
   </system>
   <file>
