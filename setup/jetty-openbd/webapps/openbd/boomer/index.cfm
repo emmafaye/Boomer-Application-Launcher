@@ -9,52 +9,17 @@
             //console.log = function() {};
         </script>
         <script type="text/javascript" src="js/plugins/jquery.js"></script>
+        <script type="text/javascript" src="js/plugins/ready.js"></script>
         <script type="text/javascript" src="js/plugins/mouse.js"></script>
         <script type="text/javascript" src="js/plugins/keycodes.js"></script>
         <script type="text/javascript" src="js/plugins/gamepad.js"></script>
         <script type="text/javascript" src="js/plugins/truncatinator.js"></script>
         <script type="text/javascript" src="js/controls.js"></script>
+        <script type="text/javascript" src="js/system.js"></script>
         <script type="text/javascript" src="js/menu.js"></script>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     </head>
     <body>
-        <div id="menu">
-            <div class="menu-item">
-                <div class="menu-item-title">Name</div>
-                <input id="menu-app-name" type="text" />
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-title">Application Command</div>
-                <input id="menu-app-command" type="text" />
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-title">Image</div>
-                <input id="menu-app-image" type="text" />
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-title">Genre</div>
-                <input id="menu-app-genre" type="text" />
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-title">Screenshot 1</div>
-                <input id="menu-app-screenshot-1" type="text" />
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-title">Screenshot 2</div>
-                <input id="menu-app-screenshot-2" type="text" />
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-title">Screenshot 3</div>
-                <input id="menu-app-screenshot-3" type="text" />
-            </div>
-            <div class="menu-item">
-                <div class="menu-item-title">Description</div>
-                <textarea id="menu-app-description"></textarea>
-            </div>
-                
-            <span id="menu-set-app" class="menu-button">Set Application</span>
-        </div>
-        
         <div id="applications-types-container">
             <div class="application-type">PC Games</div>
             <div class="application-type">SNES</div>

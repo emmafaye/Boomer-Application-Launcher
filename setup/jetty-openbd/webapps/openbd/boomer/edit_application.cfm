@@ -22,7 +22,8 @@
       if(saving) {
         saveSuccess = MongoCollectionUpdate("mongo", "applications", {"_id":mongoObjectId}, {
           "title": form.title,
-          "command": form.command
+          "command": form.command,
+          "image": form.image
         });
       } else {
         app = MongoCollectionfindone("mongo", "applications", {"_id":mongoObjectId});
@@ -39,12 +40,14 @@
   <cfscript>
     _title   = app.title;
     _command = app.command;
+    _image   = app.image;
 
     __action = cgi.SCRIPT_NAME&"?"&cgi.QUERY_STRING;
   </cfscript>
 <cfoutput><form action="#__action#" method="post">
     <p><label for="_title">Title: </label><input type="text" id="_title" name="title" value="#HtmlEditFormat(_title)#" /></p>
     <p><label for="_command">Command: </label><input type="text" id="_command" name="command" value="#HtmlEditFormat(_command)#" /></p>
+    <p><label for="_image">Image: </label><input type="text" id="_image" name="image" value="#HtmlEditFormat(_image)#" /></p>
     <p><input type="submit" value="Edit Application" /></p>
 </form></cfoutput>
 <cfelseif saving>

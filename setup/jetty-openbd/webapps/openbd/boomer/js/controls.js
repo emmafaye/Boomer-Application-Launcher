@@ -1,90 +1,85 @@
-$(document).ready(function() {
-    $().controls('init', {
-            'mapped' : {
-                'controllers' : {
-                    'dpadUp'        : {
-                        'continous'     : true,
-                        'func'          : function(){$().menu('input', 'navigate', 'up');}
-                    },
-                    'dpadDown'      : {
-                        'continous'     : true,
-                        'func'          : function(){$().menu('input', 'navigate', 'down');}
-                    },
-                    'dpadLeft'      : {
-                        'continous'     : true,
-                        'func'          : function(){$().menu('input', 'navigate', 'left');}
-                    },
-                    'dpadRight'     : {
-                        'continous'     : true,
-                        'func'          : function(){$().menu('input', 'navigate', 'right');}
-                    },
-                    'faceButton0'   : {
-                        'continous'     : false,
-                        'func'          : function(){$().menu('input', 'execute');}
-                    },
-                    'faceButton1'   : {
-                        'continous'     : false,
-                        'func'          : function(){$().menu('input', 'goBack');}
-                    },
-                    'faceButton3' : {
-                        'continous'     : false,
-                        'func'          : function(){$().menu('input', 'moreInfo');}
-                    }
-                },
-                'keyboard' : {
-                    'up arrow'        : {
-                        'continous'     : true,
-                        'func'          : function(){$().menu('input', 'navigate', 'up');}
-                    },
-                    'down arrow'      : {
-                        'continous'     : true,
-                        'func'          : function(){$().menu('input', 'navigate', 'down');}
-                    },
-                    'left arrow'      : {
-                        'continous'     : true,
-                        'func'          : function(){$().menu('input', 'navigate', 'left');}
-                    },
-                    'right arrow'     : {
-                        'continous'     : true,
-                        'func'          : function(){$().menu('input', 'navigate', 'right');}
-                    },
-                    'enter' : {
-                        'continous'     : false,
-                        'func'          : function(){$().menu('input', 'execute');}
-                    },
-                    'space' : {
-                        'continous'     : false,
-                        'func'          : function(){$().menu('input', 'moreInfo');}
-                    },
-                    'escape' : {
-                        'continous'     : false,
-                        'func'          : function(){$().menu('input', 'goBack');}
-                    },
-                    'backspace' : {
-                        'continous'     : false,
-                        'func'          : function(){$().menu('input', 'goBack');}
-                    }
-                },
-                'mouse' : {
-                    'left button' : {
-                        'continous'     : false,
-                        'func'          : function(){$().menu('input', 'execute');}
-                    },
-                    'right button' : {
-                        'continous'     : false,
-                        'func'          : function(){$().menu('input', 'edit');}
-                    }
-                }
-            }
-        }
-    );
-});
-
 (function($){
     var _self = this;
     
     var options = {};
-    var default_options = {};
+    var default_options = {
+        'mapped' : {
+            'controllers' : {
+                'dpadUp'        : {
+                    'continous'     : true,
+                    'func'          : function(){$.fn.system('input', 'navigate', 'up');}
+                },
+                'dpadDown'      : {
+                    'continous'     : true,
+                    'func'          : function(){$.fn.system('input', 'navigate', 'down');}
+                },
+                'dpadLeft'      : {
+                    'continous'     : true,
+                    'func'          : function(){$.fn.system('input', 'navigate', 'left');}
+                },
+                'dpadRight'     : {
+                    'continous'     : true,
+                    'func'          : function(){$.fn.system('input', 'navigate', 'right');}
+                },
+                'faceButton0'   : {
+                    'continous'     : false,
+                    'func'          : function(){$.fn.system('input', 'execute');}
+                },
+                'faceButton1'   : {
+                    'continous'     : false,
+                    'func'          : function(){$.fn.system('input', 'goBack');}
+                },
+                'faceButton3' : {
+                    'continous'     : false,
+                    'func'          : function(){$.fn.system('input', 'moreInfo');}
+                }
+            },
+            'keyboard' : {
+                'up arrow'        : {
+                    'continous'     : true,
+                    'func'          : function(){$.fn.system('input', 'navigate', 'up');}
+                },
+                'down arrow'      : {
+                    'continous'     : true,
+                    'func'          : function(){$.fn.system('input', 'navigate', 'down');}
+                },
+                'left arrow'      : {
+                    'continous'     : true,
+                    'func'          : function(){$.fn.system('input', 'navigate', 'left');}
+                },
+                'right arrow'     : {
+                    'continous'     : true,
+                    'func'          : function(){$.fn.system('input', 'navigate', 'right');}
+                },
+                'enter' : {
+                    'continous'     : false,
+                    'func'          : function(){$.fn.system('input', 'execute');}
+                },
+                'space' : {
+                    'continous'     : false,
+                    'func'          : function(){$.fn.system('input', 'moreInfo');}
+                },
+                'escape' : {
+                    'continous'     : false,
+                    'func'          : function(){$.fn.system('input', 'goBack');}
+                },
+                'backspace' : {
+                    'continous'     : false,
+                    'func'          : function(){$.fn.system('input', 'goBack');}
+                }
+            },
+            'mouse' : {
+                'left button' : {
+                    'continous'     : false,
+                    'func'          : function(){$.fn.system('input', 'execute');}
+                },
+                'right button' : {
+                    'continous'     : false,
+                    'func'          : function(){$.fn.system('input', 'edit');}
+                }
+            }
+        }
+    };
     
     var buttons = [
         'dpadUp',
@@ -148,7 +143,7 @@ $(document).ready(function() {
                     event.preventDefault();
                     
                     console.log('mouseup: ' + $(event.target).closest('[app_id]').attr('app_id'))
-                    $().menu('setSelectedApplication', $(event.target).closest('[app_id]').attr('app_id'));
+                    $.fn.system('setSelectedApplication', $(event.target).closest('[app_id]').attr('app_id'));
                     _self.buttonUp($.charcode(event.which), 'mouse');
                 }
             });
@@ -249,6 +244,8 @@ $(document).ready(function() {
         }
 
     };
+    
+    $docReady.push(methods.init);
 })(jQuery);
 
 

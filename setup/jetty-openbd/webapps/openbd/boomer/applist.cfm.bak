@@ -1,0 +1,39 @@
+<cfscript>
+  MongoRegister(name="mongo", server="127.0.0.1", db="boomerdb");
+
+  applist  = MongoCollectionfind("mongo", "applications", {});
+  appcount = ArrayLen(applist);
+  //WriteOutput(applist.toString());
+</cfscript>
+
+<cfoutput>{ "apps": [</cfoutput>
+    <cfloop index="i" from="1" to="#appcount#">
+        <cfoutput>
+            {
+                "id": "#applist[i]._id.toString()#",
+                "name": "#applist[i].title#"
+            <cfif i eq #appcount#>
+            }
+            <cfelse>
+            },
+            </cfif>
+        </cfoutput>
+    </cfloop>
+<cfoutput>] }</cfoutput>
+
+<!-- This is how you loop through each application and execute it -->
+<!--
+<cfloop index="i" from="1" to="#appcount#">
+  <cfoutput><p>
+    <span>#applist[i].title#</span>
+    <a href="/boomer/launcher.cfm?o=#applist[i]._id.toString()#">Launch</a>
+    <a href="/boomer/editapp.cfm?o=#applist[i]._id.toString()#">Edit</a>
+  </p></cfoutput>
+</cfloop>
+
+<p><a href="/boomer/addapp.cfm">Add Application</a></p>
+-->
+
+<!--                "image": "#applist[i].image#",
+                "genre": "#applist[i].genre#",
+                "description": "#applist[i].description#"-->

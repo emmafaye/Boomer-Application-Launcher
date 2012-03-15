@@ -23,8 +23,8 @@
 
   // Get ObjectId for our application
   objectid = "";
-  if(isDefined("url.o")) {
-    objectid = url.o;
+  if(isDefined("url.id")) {
+    objectid = url.id;
   }
 
   // Make sure the ID passed is a valid ObjectId
@@ -53,7 +53,8 @@
     // cfArray parameters = cf.getArray("parameters");
 
     try {
-      ProcessBuilder pb = new ProcessBuilder(command);
+      ProcessBuilder pb = new ProcessBuilder("cmd", "/c", command);
+      //ProcessBuilder pb = new ProcessBuilder(command);
       /*if(parameters.size() > 0) {
         pb = new ProcessBuilder(application, (String)parameters.get(0));
       }*/
@@ -63,5 +64,5 @@
     }
   </cfscript>
 <cfelse>
-Not a valid Application Passed
+    Not a valid Application Passed
 </cfif>
