@@ -10,7 +10,8 @@ TraySetToolTip("Boomer Application Launcher")
 TraySetState() ; Show the tray icon
 
 StartLauncher()
-If Not $CmdLine[1] == "--run-server" Then
+;$CmdLine[1] == "--run-server"
+If $CmdLine[0] == 0 Then
     Sleep(2500)
     ;If WinExists("Launcher - Google Chrome","") Then ProcessClose("chrome.exe")
     Run("C:\Users\" & @UserName & "\AppData\Local\Google\Chrome\Application\chrome.exe -incognito --enable-gamepad --new-window http://127.0.0.1:8080/boomer/")

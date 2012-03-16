@@ -40,6 +40,7 @@ If ($install = 6) Then
 	  FileDelete($installLocation & "/jre.exe")
 	  FileDelete($installLocation & "/ChromeSetup.exe")
 	  FileDelete($installLocation & "/tools.jar")
+          FileDelete($installLocation & "/Run Server.lnk")
 	  DirRemove($installLocation & "/autoit/", 1)
 	  
 	  Local $launch = MsgBox(4, "Launch Boomer Application Launcher", 'Installation is Complete.' & @LF & @LF & 'Would you like to Launch Boomer Application Launcher?')
