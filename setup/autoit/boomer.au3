@@ -12,7 +12,7 @@ TraySetState() ; Show the tray icon
 StartLauncher()
 ;$CmdLine[1] == "--run-server"
 If $CmdLine[0] == 0 Then
-    Sleep(2500)
+    Sleep(3000)
     ;If WinExists("Launcher - Google Chrome","") Then ProcessClose("chrome.exe")
     Run("C:\Users\" & @UserName & "\AppData\Local\Google\Chrome\Application\chrome.exe -incognito --enable-gamepad --new-window http://127.0.0.1:8080/boomer/")
     If Not WinActive("Launcher - Google Chrome","") Then WinActivate("Launcher - Google Chrome","")
@@ -45,7 +45,7 @@ Func StartLauncher()
    If ProcessExists("mongod.exe") Then ProcessClose("mongod.exe")
 	
    ;MsgBox(4096, 'test', @ScriptDir & "\mongodb\bin\mongod.exe --dbpath " & @ScriptDir & "\mongodb\data\db\")
-   Run(@ScriptDir & "\mongodb\bin\mongod.exe --dbpath " & @ScriptDir & "\mongodb\data\db\", @ScriptDir & "\mongodb\bin\", @SW_HIDE)
+   Run('"' & @ScriptDir & '\mongodb\bin\mongod.exe" --dbpath "' & @ScriptDir & '\mongodb\data\db"', @ScriptDir & '\mongodb\bin\', @SW_HIDE)
    Run('"C:\Program Files\Java\jre6\bin\java.exe" -jar start.jar', @ScriptDir & "\jetty-openbd\", @SW_HIDE)
    ;Run("java -jar start.jar", @ScriptDir & "\jetty-openbd\", @SW_HIDE)
 EndFunc
