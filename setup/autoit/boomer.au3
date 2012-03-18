@@ -44,8 +44,8 @@ Func StartLauncher()
    If ProcessExists("java.exe") Then ProcessClose("java.exe")
    If ProcessExists("mongod.exe") Then ProcessClose("mongod.exe")
 	
-   MsgBox(4096, 'test', @ScriptDir & "/mongodb/bin/mongod.exe --dbpath " & @ScriptDir & "/mongodb/data/db")
-   Run(@ScriptDir & "/mongodb/bin/mongod.exe --dbpath " & @ScriptDir & "/mongodb/data/db", @SW_HIDE)
-   Run('"C:/Program Files/Java/jre6/bin/java.exe" -jar start.jar', @ScriptDir & "/jetty-openbd/", @SW_HIDE)
-   ;Run("java -jar start.jar", @ScriptDir & "/jetty-openbd/", @SW_HIDE)
+   ;MsgBox(4096, 'test', @ScriptDir & "\mongodb\bin\mongod.exe --dbpath " & @ScriptDir & "\mongodb\data\db\")
+   Run(@ScriptDir & "\mongodb\bin\mongod.exe --dbpath " & @ScriptDir & "\mongodb\data\db\", @ScriptDir & "\mongodb\bin\", @SW_HIDE)
+   Run('"C:\Program Files\Java\jre6\bin\java.exe" -jar start.jar', @ScriptDir & "\jetty-openbd\", @SW_HIDE)
+   ;Run("java -jar start.jar", @ScriptDir & "\jetty-openbd\", @SW_HIDE)
 EndFunc
