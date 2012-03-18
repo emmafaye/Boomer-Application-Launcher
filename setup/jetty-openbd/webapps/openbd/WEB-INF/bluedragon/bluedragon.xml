@@ -15,7 +15,7 @@
     <tempdirectory>/WEB-INF/bluedragon/work/temp</tempdirectory>
     <password>admin</password>
     <defaultcharset>utf-8</defaultcharset>
-    <lastupdated>18/Mar/2012 04:52.32</lastupdated>
+    <lastupdated>18/Mar/2012 04:57.46</lastupdated>
     <allowedips></allowedips>
     <deniedips></deniedips>
   </system>

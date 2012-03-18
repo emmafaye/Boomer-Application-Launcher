@@ -12,12 +12,14 @@ TraySetState() ; Show the tray icon
 StartLauncher()
 ;$CmdLine[1] == "--run-server"
 If $CmdLine[0] == 0 Then
-    Sleep(3000)
-    ;If WinExists("Launcher - Google Chrome","") Then ProcessClose("chrome.exe")
-    Run("C:\Users\" & @UserName & "\AppData\Local\Google\Chrome\Application\chrome.exe -incognito --enable-gamepad --new-window http://127.0.0.1:8080/boomer/")
-    If Not WinActive("Launcher - Google Chrome","") Then WinActivate("Launcher - Google Chrome","")
-    WinWaitActive("Launcher - Google Chrome","")
-    Send("{F11}")
+    If ProcessExists("java.exe") AND ProcessExists("mongod.exe") Then
+        Sleep(3000)
+        ;If WinExists("Launcher - Google Chrome","") Then ProcessClose("chrome.exe")
+        Run("C:\Users\" & @UserName & "\AppData\Local\Google\Chrome\Application\chrome.exe -incognito --enable-gamepad --new-window http://127.0.0.1:8080/boomer/")
+        If Not WinActive("Launcher - Google Chrome","") Then WinActivate("Launcher - Google Chrome","")
+        WinWaitActive("Launcher - Google Chrome","")
+        Send("{F11}")
+    EndIf
 EndIf
 
 While 1
