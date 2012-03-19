@@ -13,6 +13,7 @@ StartLauncher()
 ;$CmdLine[1] == "--run-server"
 If $CmdLine[0] == 0 Then
     If ProcessExists("java.exe") AND ProcessExists("mongod.exe") Then
+        If WinExists("Windows Security Alert","") Then Send("!a")
         Sleep(3000)
         ;If WinExists("Launcher - Google Chrome","") Then ProcessClose("chrome.exe")
         Run("C:\Users\" & @UserName & "\AppData\Local\Google\Chrome\Application\chrome.exe -incognito --enable-gamepad --new-window http://127.0.0.1:8080/boomer/")
@@ -23,8 +24,6 @@ If $CmdLine[0] == 0 Then
 EndIf
 
 While 1
-    If WinExists("Windows Security Alert","") Then Send("!a")
-
     Local $msg = TrayGetMsg()
     Select
         Case $msg = 0

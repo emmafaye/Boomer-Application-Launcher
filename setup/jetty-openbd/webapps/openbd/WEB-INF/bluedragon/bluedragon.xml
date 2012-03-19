@@ -1,23 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <server>
   <system>
-    <legacyformvalidation>false</legacyformvalidation>
     <resourcepath>/WEB-INF/resources</resourcepath>
     <licensekey></licensekey>
     <component-cfc>/WEB-INF/bluedragon/component.cfc</component-cfc>
-    <strictarraypassbyreference>false</strictarraypassbyreference>
     <whitespacecomp>false</whitespacecomp>
     <nativelibdir>/WEB-INF/bin</nativelibdir>
     <missingtemplatehandler></missingtemplatehandler>
-    <lastfile>M:\WORK-DMI\Web\wamp\www\boomer\setup\jetty-openbd\webapps\openbd\WEB-INF\bluedragon\bluedragon.xml.bak.1</lastfile>
+    <lastfile>E:\OpenBD\openbd\build\j2ee\webapp\WEB-INF\bluedragon\bluedragon.xml.bak.1</lastfile>
     <errorhandler></errorhandler>
     <buffersize>0</buffersize>
     <tempdirectory>/WEB-INF/bluedragon/work/temp</tempdirectory>
     <password>admin</password>
     <defaultcharset>utf-8</defaultcharset>
-    <lastupdated>18/Mar/2012 04:57.46</lastupdated>
-    <allowedips></allowedips>
-    <deniedips></deniedips>
+    <lastupdated>20/Aug/2011 13:10.05</lastupdated>
+    <legacyformvalidation>false</legacyformvalidation>
+    <strictarraypassbyreference>false</strictarraypassbyreference>
   </system>
   <file>
     <maxfiles>1000</maxfiles>
@@ -48,10 +46,6 @@
   <cfquery>
     <cache>true</cache>
   </cfquery>
-  <openbdadminapi>
-    <version>2.0</version>
-    <lastupdated>11/Mar/2012 19:14:00</lastupdated>
-  </openbdadminapi>
   <cfapplication>
     <clientstorage>cookie</clientstorage>
     <enabled>true</enabled>

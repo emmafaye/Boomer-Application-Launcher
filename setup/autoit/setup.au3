@@ -14,7 +14,7 @@ If ($install = 6) Then
 	  ProcessWaitClose($JRE)
 	  FileCopy(@ScriptDir & "\setup\tools.jar", "C:\Program Files\Java\jre6\lib", 1)
 	  
-	  Local $CMD = Run("cmd.exe /k set CLASSPATH=%CLASSPATH%;C:\Prorgram Files\jre6\bin", @SW_HIDE)
+	  Local $CMD = Run("cmd.exe /k set CLASSPATH=%CLASSPATH%;C:\Prorgram Files\jre6\lib", @SW_HIDE)
 	  ProcessClose($CMD)
 	  
 	  Local $GC = Run(@ScriptDir & "\setup\ChromeSetup.exe")

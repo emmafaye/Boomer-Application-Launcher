@@ -3,47 +3,12 @@
     
     var options = {};
     var default_options = {};
-    
-//    <div id="menu">
-//        <div class="menu-item">
-//            <div class="menu-item-title">Name</div>
-//            <input id="menu-app-name" type="text" />
-//        </div>
-//        <div class="menu-item">
-//            <div class="menu-item-title">Application Command</div>
-//            <input id="menu-app-command" type="text" />
-//        </div>
-//        <div class="menu-item">
-//            <div class="menu-item-title">Image</div>
-//            <input id="menu-app-image" type="text" />
-//        </div>
-//        <div class="menu-item">
-//            <div class="menu-item-title">Genre</div>
-//            <input id="menu-app-genre" type="text" />
-//        </div>
-//        <div class="menu-item">
-//            <div class="menu-item-title">Screenshot 1</div>
-//            <input id="menu-app-screenshot-1" type="text" />
-//        </div>
-//        <div class="menu-item">
-//            <div class="menu-item-title">Screenshot 2</div>
-//            <input id="menu-app-screenshot-2" type="text" />
-//        </div>
-//        <div class="menu-item">
-//            <div class="menu-item-title">Screenshot 3</div>
-//            <input id="menu-app-screenshot-3" type="text" />
-//        </div>
-//        <div class="menu-item">
-//            <div class="menu-item-title">Description</div>
-//            <textarea id="menu-app-description"></textarea>
-//        </div>
-//
-//        <span id="menu-set-app" class="menu-button">Set Application</span>
-//    </div>
+    var menu_items = ['name', 'command', 'image', 'type', 'genre', 'screenshot1', 'screenshot2', 'screenshot3', 'description'];
     
     var methods = {
         init : function(set_options) {
             options = $.extend({}, default_options, set_options);
+            createMenu();
             menuEvents();
             
             return this;
@@ -53,6 +18,20 @@
             return this;
         }
     };
+    
+    var createMenu = function() {
+        var $menu = $('<div id="menu"></div>');
+        
+        $.each(menu_items, function() {
+            $menu.append(
+                '<div class="menu-item">' +
+                    '<div class="menu-item-title">' + this + '</div>' +
+                    '<input id="menu-app-' + this + '" type="text" />' +
+                '</div>'
+            ); 
+        });
+        $('body').append($menu);
+    }
     
     var displayMenu = function() {
         var mousePos = $.fn.mouse('getMousePos');
@@ -105,5 +84,42 @@
 
     };
     
-    //$docReady.push(methods.init);
+    $docReady.push(methods.init);
 })(jQuery);
+
+//    <div id="menu">
+//        <div class="menu-item">
+//            <div class="menu-item-title">Name</div>
+//            <input id="menu-app-name" type="text" />
+//        </div>
+//        <div class="menu-item">
+//            <div class="menu-item-title">Application Command</div>
+//            <input id="menu-app-command" type="text" />
+//        </div>
+//        <div class="menu-item">
+//            <div class="menu-item-title">Image</div>
+//            <input id="menu-app-image" type="text" />
+//        </div>
+//        <div class="menu-item">
+//            <div class="menu-item-title">Genre</div>
+//            <input id="menu-app-genre" type="text" />
+//        </div>
+//        <div class="menu-item">
+//            <div class="menu-item-title">Screenshot 1</div>
+//            <input id="menu-app-screenshot-1" type="text" />
+//        </div>
+//        <div class="menu-item">
+//            <div class="menu-item-title">Screenshot 2</div>
+//            <input id="menu-app-screenshot-2" type="text" />
+//        </div>
+//        <div class="menu-item">
+//            <div class="menu-item-title">Screenshot 3</div>
+//            <input id="menu-app-screenshot-3" type="text" />
+//        </div>
+//        <div class="menu-item">
+//            <div class="menu-item-title">Description</div>
+//            <textarea id="menu-app-description"></textarea>
+//        </div>
+//
+//        <span id="menu-set-app" class="menu-button">Set Application</span>
+//    </div>
