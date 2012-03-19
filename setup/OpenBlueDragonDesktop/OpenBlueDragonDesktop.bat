@@ -1,0 +1,1 @@
+start javaw -classpath .;.\lib\* com.bluedragon.desktop.Desktop
